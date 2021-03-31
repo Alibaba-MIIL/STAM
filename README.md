@@ -43,7 +43,7 @@ STAM models accuracy and GPU throughput on Kinetics400, compared to X3D. All mea
  <table>
   <tr>
     <th>Models</th>
-    <th>Top-1 Accuracy <br>(img/sec)</th>
+    <th>Top-1 Accuracy <br>(%)</th>
     <th>Flops × views<br>(10^9)</th>
     <th># Input Frames</th>
     <th>Runtime<br>(Videos/sec)</th>
