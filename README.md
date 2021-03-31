@@ -87,7 +87,14 @@ STAM models accuracy and GPU throughput on Kinetics400, compared to X3D. All mea
 
 ## Pretrained Models
 
-Coming soon
+We provide a collection of STAM models pre-trained on Kinetics400. 
+
+| Model name  | checkpoint
+| ------------ | :--------------: |
+| STAM_16 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/stam_16.pth) |
+| STAM_32 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/stam_32.pth) |
+| STAM_64 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/stam_64.pth) |
+
 
 ## Reproduce Article Scores
 We provide code for reproducing the validation top-1 score of STAM
@@ -116,3 +123,11 @@ python -m infer \
     primaryClass = {cs.CV}
 }
 ```
+
+## Acknowledgements
+
+We thank Tal Ridnik for discussions and comments.
+
+Some components of this code implementation are adapted from the excellent
+[repository of Ross Wightman](https://github.com/rwightman/pytorch-image-models). Check it out and give it a star while
+you are at it.
