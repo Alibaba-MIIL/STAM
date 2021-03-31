@@ -15,8 +15,10 @@ def create_model(args):
       args.frames_per_clip = 16
     elif args.model_name=='stam_32':
       args.frames_per_clip = 32
+      args.frame_rate = 3.2
     elif args.model_name=='stam_64':
       args.frames_per_clip = 64
+      args.frame_rate = 6.4
     else:
         print("model: {} not found !!".format(args.model_name))
         exit(-1)

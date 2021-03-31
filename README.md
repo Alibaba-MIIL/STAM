@@ -82,12 +82,27 @@ STAM models accuracy and GPU throughput on Kinetics400, compared to X3D. All mea
     <td>64</td>
     <td><b>4.8</b></td>
   </tr>
-</table>
+ </table>
 </p>
 
 ## Pretrained Models
 
 Coming soon
+
+## Reproduce Article Scores
+We provide code for reproducing the validation top-1 score of STAM
+models on Kinetics400. First, download pretrained models from the links above.
+
+Then, run the infer.py script. For example, for stam_16 (input size 224)
+run:
+```bash
+python -m infer.py \
+--val_dir=/path/to/kinetics_val_folder \
+--model_path=/model/path/to/stam_16.pth \
+--model_name=stam_16
+--input_size=224
+```
+
 
 ## Citations
 
