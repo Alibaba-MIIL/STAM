@@ -5,7 +5,7 @@ import argparse
 
 torch.backends.cudnn.benchmark = True
 
-parser = argparse.ArgumentParser(description='PyTorch TResNet ImageNet Inference')
+parser = argparse.ArgumentParser(description='PyTorch STAM Kinetics Inference')
 parser.add_argument('--val_dir')
 parser.add_argument('--model_path')
 parser.add_argument('--model_name', type=str, default='stam_16')
