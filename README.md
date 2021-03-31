@@ -96,7 +96,7 @@ models on Kinetics400. First, download pretrained models from the links above.
 Then, run the infer.py script. For example, for stam_16 (input size 224)
 run:
 ```bash
-python -m infer.py \
+python -m infer \
 --val_dir=/path/to/kinetics_val_folder \
 --model_path=/model/path/to/stam_16.pth \
 --model_name=stam_16
