@@ -240,16 +240,9 @@ def STAM_224(model_params):
     model_kwargs = dict(
         patch_size=16, embed_dim=768, depth=12, num_heads=12, representation_size=None)
     img_size = args.input_size
-    t_layers = args.temporal_transformer_layers
-    if t_layers is None:
-      t_layers = 6
+    t_layers = 6
 
-    aggregate = None
-    if args.is_video:
-      if args.use_temporal_transformer:
-        aggregate = TAggregate(args.frames_per_clip, embed_dim=768, n_layers=t_layers)
-      else:
-        aggregate = MeanAggregate(args.frames_per_clip, args.batch_size)
+    aggregate = TAggregate(args.frames_per_clip, embed_dim=768, n_layers=t_layers)
 
     model = VisionTransformer(img_size=img_size, num_classes=num_classes, aggregate=aggregate,
                               **model_kwargs)
