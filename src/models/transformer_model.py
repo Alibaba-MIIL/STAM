@@ -1,16 +1,31 @@
+""" Vision Transformer (ViT) in PyTorch
+
+A PyTorch implement of Vision Transformers as described in
+'An Image Is Worth 16 x 16 Words: Transformers for Image Recognition at Scale' - https://arxiv.org/abs/2010.11929
+
+The official jax code is released and available at https://github.com/google-research/vision_transformer
+
+Acknowledgments:
+* The paper authors for releasing code and weights, thanks!
+* I fixed my class token impl based on Phil Wang's https://github.com/lucidrains/vit-pytorch ... check it out
+for some einops/einsum fun
+* Simple transformer style inspired by Andrej Karpathy's https://github.com/karpathy/minGPT
+* Bert reference code checks against Huggingface Transformers and Tensorflow Bert
+
+Hacked together by / Copyright 2020 Ross Wightman
+"""
+
 from collections import OrderedDict
 from functools import partial
 
 import torch
 import torch.nn as nn
-from fastai2.layers import trunc_normal_
+from ..utils.utils import trunc_normal_
 
 # from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
 # from .helpers import load_pretrained
 from .layers.drop import DropPath
-from .layers.helpers import to_2tuple
-from ..utils.registry import register_model
-from .temporal_aggregation import TAggregate
+from .temporal_aggregation import TAggregate, MeanAggregate
 
 # , trunc_normal_
 # from .resnet import resnet26d, resnet50d
@@ -202,8 +217,8 @@ class PatchEmbed(nn.Module):
 
   def __init__(self, img_size=224, patch_size=16, in_chans=3, embed_dim=768):
     super().__init__()
-    img_size = to_2tuple(img_size)
-    patch_size = to_2tuple(patch_size)
+    img_size = (img_size, img_size)
+    patch_size = (patch_size, patch_size)
     num_patches = (img_size[1] // patch_size[1]) * (img_size[0] // patch_size[0])
     self.img_size = img_size
     self.patch_size = patch_size
@@ -235,12 +250,10 @@ def vit_base_patch16_224_in21k(model_params):
 
     aggregate = None
     if args.is_video:
-      if args.use_frame_transformer:
+      if args.use_temporal_transformer:
         aggregate = TAggregate(args.frames_per_clip, embed_dim=768, n_layers=t_layers)
-      elif args.use_multihead_attn:
-        aggregate = SelfAttnAgg(args.frames_per_clip, args.batch_size)
       else:
-        aggregate = Aggregate(args.frames_per_clip, args.batch_size)
+        aggregate = MeanAggregate(args.frames_per_clip, args.batch_size)
 
     model = VisionTransformer(img_size=img_size, num_classes=num_classes, aggregate=aggregate,
                               **model_kwargs)

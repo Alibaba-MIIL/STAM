@@ -1,6 +1,7 @@
 from torch import nn
 import torch
-from fastai2.layers import trunc_normal_
+# from fastai2.layers import trunc_normal_
+from ..utils.utils import trunc_normal_
 
 class TAggregate(nn.Module):
   def __init__(self, clip_length=None, embed_dim=2048, n_layers=6):
@@ -43,8 +44,20 @@ class TAggregate(nn.Module):
     # x = self.pos_drop(x)
 
     x.transpose_(1,0)
-    # x = x.view((self.clip_length, nvids, -1))
     o = self.transformer_enc(x)
-    # o = o.mean(dim=0)
 
     return o[0]
+
+
+class MeanAggregate(nn.Module):
+  def __init__(self, sampled_frames=None, nvids=None):
+    super(MeanAggregate, self).__init__()
+    self.clip_length = sampled_frames
+    self.nvids = nvids
+
+
+  def forward(self, x):
+    # nvids = x.shape[0] // self.clip_length
+    x = x.view((-1, self.clip_length) + x.size()[1:])
+    o = x.mean(dim=1)
+    return o
