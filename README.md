@@ -4,8 +4,7 @@
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-image-is-worth-16x16-words-what-is-a-video/action-recognition-in-videos-on-ucf101)](https://paperswithcode.com/sota/action-recognition-in-videos-on-ucf101?p=an-image-is-worth-16x16-words-what-is-a-video)
 
-[paper](https://arxiv.org/pdf/2103.13915.pdf) |
-[pretrained models - coming soon]
+[paper](https://arxiv.org/pdf/2103.13915.pdf) 
 
 Official PyTorch Implementation
 
@@ -85,6 +84,10 @@ STAM models accuracy and GPU throughput on Kinetics400, compared to X3D. All mea
   </tr>
 </table>
 </p>
+
+## Pretrained Models
+
+Coming soon
 
 ## Citations
 

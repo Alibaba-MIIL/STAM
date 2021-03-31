@@ -144,9 +144,6 @@ class VisionTransformer(nn.Module):
         else:
             self.pre_logits = nn.Identity()
 
-        # NOTE as per official impl, we could have a pre-logits representation dense layer + tanh here
-        #self.repr = nn.Linear(embed_dim, representation_size)
-        #self.repr_act = nn.Tanh()
 
         # Classifier head
         self.head = nn.Linear(embed_dim, num_classes) if num_classes > 0 else nn.Identity()
@@ -228,14 +225,13 @@ class PatchEmbed(nn.Module):
 
   def forward(self, x):
     B, C, H, W = x.shape
-    # FIXME look at relaxing size constraints
     assert H == self.img_size[0] and W == self.img_size[1], \
       f"Input image size ({H}*{W}) doesn't match model ({self.img_size[0]}*{self.img_size[1]})."
     x = self.proj(x).flatten(2).transpose(1, 2)
     return x
 
 
-def vit_base_patch16_224_in21k(model_params):
+def STAM_224(model_params):
     """ ViT-Base model (ViT-B/16) from original paper (https://arxiv.org/abs/2010.11929).
     ImageNet-21k weights @ 224x224, source https://github.com/google-research/vision_transformer.
     """
