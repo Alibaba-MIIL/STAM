@@ -2,8 +2,6 @@
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-image-is-worth-16x16-words-what-is-a-video/action-classification-on-kinetics-400)](https://paperswithcode.com/sota/action-classification-on-kinetics-400?p=an-image-is-worth-16x16-words-what-is-a-video)
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-image-is-worth-16x16-words-what-is-a-video/action-recognition-in-videos-on-ucf101)](https://paperswithcode.com/sota/action-recognition-in-videos-on-ucf101?p=an-image-is-worth-16x16-words-what-is-a-video)
-
 [paper](https://arxiv.org/pdf/2103.13915.pdf) 
 
 Official PyTorch Implementation
