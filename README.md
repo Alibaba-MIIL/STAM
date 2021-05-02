@@ -80,17 +80,17 @@ STAM models accuracy and GPU throughput on Kinetics400, compared to X3D. All mea
     <td>N/A</td>
   </tr>
   <tr>
-    <td>ViT-B-TimeSformer</td>
+    <td>TimeSformer-L</td>
     <td>80.7</td>
     <td>2380 × 3</td>
-    <td>__</td>
+    <td> 288 </td>
     <td>N/A</td>
   </tr>
   <tr>
-    <td>ViT-L-ViViT</td>
+    <td>ViViT-L</td>
     <td>81.3</td>
     <td>3992 × 12</td>
-    <td>__</td>
+    <td>384</td>
     <td>N/A</td>
   </tr>
   <tr>
