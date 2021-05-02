@@ -1,6 +1,6 @@
 import torch
-from src.utils.utils import validate, create_dataloader
-from src.models import create_model
+from stam.utils.utils import validate, create_dataloader
+from stam.models import create_model
 import argparse
 
 torch.backends.cudnn.benchmark = True

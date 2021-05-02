@@ -33,8 +33,7 @@ dataset) with a fraction of the data (frames per video), computation and latency
 >
 
 ## Update 2/5/2021:  Improved results
-Due to improved training hyperparameters, and using KD training, we were able to significantly
- improve
+Due to improved training hyperparameters, and using KD training, we were able to improve
  STAM results on Kinetics400 (+ ~1.5%).  We are releasing the pretrained weights of the improved
   models. 
 
