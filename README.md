@@ -32,6 +32,10 @@ dataset) with a fraction of the data (frames per video), computation and latency
 ×40 faster inference than the current leading method
 >
 
+## Update 2/5/2021:  Improved results
+Due to improved hyperparameters for training, and using KD, we were able to significantly improve
+ STAM results on Kinetics400.  We are releasing the pretrained weights of the improved models. 
+
 ## Main Article Results
 
 STAM models accuracy and GPU throughput on Kinetics400, compared to X3D. All measurements were
@@ -67,15 +71,36 @@ STAM models accuracy and GPU throughput on Kinetics400, compared to X3D. All mea
     <td>N/A</td>
   </tr>
   <tr>
+    <td>X3D-XXL</td>
+    <td>80.4</td>
+    <td>194 × 30</td>
+    <td>480</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>ViT-B-TimeSformer</td>
+    <td>80.7</td>
+    <td>2380 × 3</td>
+    <td>__</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>ViT-L-ViViT</td>
+    <td>81.3</td>
+    <td>3992 × 12</td>
+    <td>__</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
     <td>STAM-16</td>
-    <td>77.8</td>
+    <td>79.3</td>
     <td><b>270 × 1</b></td>
     <td><b>16</b></td>
     <td><b>20.0</b></td>
   </tr>
   <tr>
     <td>STAM-64</td>
-    <td><b>79.2</b></td>
+    <td><b>80.5</b></td>
     <td>1080 × 1</td>
     <td>64</td>
     <td>4.8</td>
