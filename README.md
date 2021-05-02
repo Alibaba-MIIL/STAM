@@ -35,7 +35,7 @@ dataset) with a fraction of the data (frames per video), computation and latency
 ## Update 2/5/2021:  Improved results
 Due to improved training hyperparameters, and using KD training, we were able to improve
  STAM results on Kinetics400 (+ ~1.5%).  We are releasing the pretrained weights of the improved
-  models. 
+  models (see Pretrained Models below). 
 
 ## Main Article Results
 
@@ -115,9 +115,8 @@ We provide a collection of STAM models pre-trained on Kinetics400.
 
 | Model name  | checkpoint
 | ------------ | :--------------: |
-| STAM_16 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/stam_16.pth) |
-| STAM_32 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/stam_32.pth) |
-| STAM_64 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/stam_64.pth) |
+| STAM_16 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/v2/stam_16.pth) |
+| STAM_64 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/v2/stam_64.pth) |
 
 
 ## Reproduce Article Scores
