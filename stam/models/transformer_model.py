@@ -105,10 +105,10 @@ class VisionTransformer(nn.Module):
     """ Vision Transformer with support for patch or hybrid CNN input stage
     """
     def __init__(self, img_size=224, patch_size=16, in_chans=3, num_classes=1000, embed_dim=768, depth=12,
-                 num_heads=12, mlp_ratio=4., qkv_bias=False, qk_scale=None,
+                 num_heads=12, mlp_ratio=4., qkv_bias=True, qk_scale=None,
                  representation_size=None,
                  drop_rate=0., attn_drop_rate=0.,
-                 drop_path_rate=0., hybrid_backbone=None, norm_layer=nn.LayerNorm,
+                 drop_path_rate=0., norm_layer=nn.LayerNorm,
                  aggregate=None):
         super().__init__()
         # self.num_classes = num_classes
@@ -212,7 +212,7 @@ class PatchEmbed(nn.Module):
   """ Image to Patch Embedding
   """
 
-  def __init__(self, img_size=224, patch_size=16, in_chans=3, embed_dim=768):
+  def __init__(self, img_size=224, patch_size=16, in_chans=3, embed_dim=768, norm_layer=None):
     super().__init__()
     img_size = (img_size, img_size)
     patch_size = (patch_size, patch_size)
@@ -222,12 +222,14 @@ class PatchEmbed(nn.Module):
     self.num_patches = num_patches
 
     self.proj = nn.Conv2d(in_chans, embed_dim, kernel_size=patch_size, stride=patch_size)
+    self.norm = norm_layer(embed_dim) if norm_layer else nn.Identity()
 
   def forward(self, x):
     B, C, H, W = x.shape
     assert H == self.img_size[0] and W == self.img_size[1], \
       f"Input image size ({H}*{W}) doesn't match model ({self.img_size[0]}*{self.img_size[1]})."
     x = self.proj(x).flatten(2).transpose(1, 2)
+    x = self.norm(x)
     return x
 
 
