@@ -93,11 +93,25 @@ STAM models accuracy and GPU throughput on Kinetics400, compared to X3D. All mea
     <td>N/A</td>
   </tr>
   <tr>
+    <td>STAM-8</td>
+    <td>77.5</td>
+    <td><b>135 × 1</b></td>
+    <td><b>8</b></td>
+    <td><b>---</b></td>
+  </tr>
+  <tr>
     <td>STAM-16</td>
     <td>79.3</td>
     <td><b>270 × 1</b></td>
     <td><b>16</b></td>
     <td><b>20.0</b></td>
+  </tr>
+  <tr>
+    <td>STAM-32</td>
+    <td>79.95</td>
+    <td><b>540 × 1</b></td>
+    <td><b>32</b></td>
+    <td><b>---</b></td>
   </tr>
   <tr>
     <td>STAM-64</td>
@@ -115,7 +129,9 @@ We provide a collection of STAM models pre-trained on Kinetics400.
 
 | Model name  | checkpoint
 | ------------ | :--------------: |
+| STAM_8 | [link](http://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo%2FSTAM%2Fv2%2Fstam_8.pth?Expires=1729183297&OSSAccessKeyId=LTAI4Fs7kz9U9GQpL129xj7Y&Signature=Yg873yXHEOWF%2FtHtXL3jK0fEnEs%3D) |
 | STAM_16 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/v2/stam_16.pth) |
+| STAM_32 | [link](http://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo%2FSTAM%2Fv2%2Fstam_32.pth?Expires=1629183524&OSSAccessKeyId=LTAI4Fs7kz9U9GQpL129xj7Y&Signature=eF4VFhUnDU58Whq0NZmKmZk9o%2F4%3D) |
 | STAM_64 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/v2/stam_64.pth) |
 
 
