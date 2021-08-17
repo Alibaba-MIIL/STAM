@@ -129,9 +129,9 @@ We provide a collection of STAM models pre-trained on Kinetics400.
 
 | Model name  | checkpoint
 | ------------ | :--------------: |
-| STAM_8 | [link](http://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo%2FSTAM%2Fv2%2Fstam_8.pth?Expires=1729183297&OSSAccessKeyId=LTAI4Fs7kz9U9GQpL129xj7Y&Signature=Yg873yXHEOWF%2FtHtXL3jK0fEnEs%3D) |
+| STAM_8 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/v2/stam_8.pth) |
 | STAM_16 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/v2/stam_16.pth) |
-| STAM_32 | [link](http://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo%2FSTAM%2Fv2%2Fstam_32.pth?Expires=1629183524&OSSAccessKeyId=LTAI4Fs7kz9U9GQpL129xj7Y&Signature=eF4VFhUnDU58Whq0NZmKmZk9o%2F4%3D) |
+| STAM_32 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/v2/stam_32.pth) |
 | STAM_64 | [link](https://miil-public-eu.oss-eu-central-1.aliyuncs.com/model-zoo/STAM/v2/stam_64.pth) |
 
 
